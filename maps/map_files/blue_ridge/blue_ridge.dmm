@@ -13822,6 +13822,13 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
+/obj/structure/machinery/floodlight/landing/floor{
+	color = "#dae2ff";
+	light_color = "#dae2ff";
+	layer = 1;
+	light_power = 6;
+	light_range = 6
+	},
 /turf/open/floor/almayer/plate,
 /area/golden_arrow/platoonprep)
 "aMC" = (
@@ -18982,6 +18989,13 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/prep_hallway)
 "eVv" = (
+/obj/structure/machinery/floodlight/landing/floor{
+	color = "#dae2ff";
+	light_color = "#dae2ff";
+	layer = 1;
+	light_power = 6;
+	light_range = 6
+	},
 /turf/open/floor/almayer/orange/northwest,
 /area/golden_arrow/platoonprep)
 "eVF" = (
@@ -24599,12 +24613,6 @@
 	},
 /turf/open/floor/almayer/orange,
 /area/golden_arrow/dorms)
-"pZs" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/turf/open/floor/almayer/floor,
-/area/golden_arrow/platoonprep)
 "qbU" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "N";
@@ -28600,6 +28608,13 @@
 /turf/open/floor/almayer/edge/east,
 /area/golden_arrow/engineering)
 "yeX" = (
+/obj/structure/machinery/floodlight/landing/floor{
+	color = "#dae2ff";
+	light_color = "#dae2ff";
+	layer = 1;
+	light_power = 6;
+	light_range = 6
+	},
 /turf/open/floor/almayer/orange/southwest,
 /area/golden_arrow/platoonprep)
 "yfa" = (
@@ -37229,7 +37244,7 @@ lqa
 nxj
 oRK
 yeX
-pZs
+afQ
 eVv
 nxj
 nxj
