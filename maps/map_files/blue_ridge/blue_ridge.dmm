@@ -936,8 +936,15 @@
 /turf/open/floor/almayer/test_floor4,
 /area/golden_arrow/hangar)
 "abN" = (
-/obj/item/storage/box/flare/signal,
-/turf/open/floor/almayer,
+/obj/effect/decal/warning_stripes{
+	icon_state = "door_warning";
+	dir = 4;
+	pixel_x = 2
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/turf/open/floor/almayer/edge/smooth/endcap_right/east,
 /area/golden_arrow/platoonprep)
 "abO" = (
 /obj/structure/bed/chair/comfy{
@@ -6113,14 +6120,12 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/supply)
 "all" = (
-/obj/structure/machinery/light/double/blue/golden_arrow{
-	dir = 4;
-	brightness = 15;
-	light_power = 15;
-	light_range = 15
+/obj/item/paper/crumpled{
+	pixel_y = 17;
+	pixel_x = -2
 	},
-/turf/open/floor/almayer/edge/smooth/corner/north,
-/area/golden_arrow/platoonprep)
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "alm" = (
 /obj/structure/desertdam/decals/road_edge{
 	pixel_x = -12
@@ -6466,7 +6471,7 @@
 /area/golden_arrow/supply)
 "amd" = (
 /obj/structure/machinery/door/airlock/multi_tile/almayer/almayer/glass{
-	req_access = list(12,17)
+	req_access = list(12)
 	},
 /obj/structure/machinery/door/poddoor/almayer/open{
 	id = "CIC";
@@ -8093,8 +8098,8 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/supply)
 "aoT" = (
-/obj/structure/window/framed/almayer/hull,
-/turf/open/floor/almayer/edge/smooth/corner/north,
+/obj/structure/window/framed/almayer,
+/turf/open/floor/almayer,
 /area/golden_arrow/platoon_commander_rooms)
 "aoU" = (
 /obj/structure/closet/secure_closet/marine_personal/squad_leader/s3{
@@ -8136,12 +8141,7 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/lower_cargo)
 "ape" = (
-/obj/structure/flora/pottedplant{
-	icon_state = "pottedplant_17";
-	pixel_y = 3;
-	pixel_x = 9;
-	layer = 3.6
-	},
+/obj/structure/bed/chair/office/dark,
 /turf/open/floor/almayer/plate,
 /area/golden_arrow/platoon_commander_rooms)
 "aph" = (
@@ -8161,11 +8161,11 @@
 /turf/open/floor/almayer/cargo,
 /area/golden_arrow/hangar)
 "apj" = (
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced/colony{
-	req_access = list(19)
+/obj/structure/cable/heavyduty{
+	icon_state = "1-2-4"
 	},
-/turf/open/floor/almayer,
-/area/golden_arrow/platoon_commander_rooms)
+/turf/open/floor/plating/plating_catwalk,
+/area/golden_arrow/platoonprep)
 "apk" = (
 /obj/structure/surface/table/reinforced/prison,
 /obj/structure/sign/catclock{
@@ -16850,7 +16850,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "2-8"
 	},
-/turf/open/floor/almayer,
+/turf/open/floor/almayer/cargo_arrow/west,
 /area/golden_arrow/platoonprep)
 "bhu" = (
 /obj/structure/window/framed/almayer,
@@ -17793,8 +17793,8 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/cryo_cells)
 "cJt" = (
-/obj/structure/window/framed/almayer/hull,
-/turf/open/floor/almayer,
+/obj/structure/window/framed/almayer,
+/turf/open/floor/almayer/edge/smooth/corner/north,
 /area/golden_arrow/platoon_commander_rooms)
 "cMT" = (
 /obj/structure/machinery/door/poddoor/almayer/locked{
@@ -18442,7 +18442,7 @@
 /area/golden_arrow/lower_cargo)
 "dVX" = (
 /obj/structure/machinery/door/airlock/multi_tile/almayer/almayer/glass{
-	req_access = list(12,17)
+	req_access = list(12)
 	},
 /turf/open/floor/almayer/mono,
 /area/golden_arrow/platoon_commander_rooms)
@@ -20094,17 +20094,12 @@
 /turf/open/floor/almayer/test_floor4,
 /area/golden_arrow/lower_cargo)
 "hhL" = (
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = -8;
-	pixel_y = 16
-	},
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = 7;
-	pixel_y = 16
-	},
 /obj/structure/surface/table/almayer,
+/obj/structure/machinery/door_control{
+	pixel_x = 6;
+	id = "GM";
+	name = "GM Shuttres"
+	},
 /turf/open/floor/almayer,
 /area/golden_arrow/platoon_commander_rooms)
 "hhQ" = (
@@ -21263,6 +21258,13 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/hangar)
+"jBO" = (
+/obj/item/paper/crumpled{
+	pixel_y = 8;
+	pixel_x = 22
+	},
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "jDm" = (
 /obj/structure/machinery/light/double/blue/golden_arrow{
 	light_power = 15;
@@ -21368,14 +21370,12 @@
 /turf/open/floor/almayer/edge/smooth/east,
 /area/golden_arrow/hangar)
 "jOP" = (
-/obj/structure/blocker/forcefield/vehicles{
-	layer = 5
+/obj/item/paper/crumpled{
+	pixel_y = -10;
+	pixel_x = 10
 	},
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
-	},
-/turf/open/floor/almayer/test_floor4,
-/area/golden_arrow/platoonarmory)
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "jPw" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "N";
@@ -21632,15 +21632,16 @@
 /turf/open/space/basic,
 /area/space)
 "kuH" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+/obj/structure/machinery/light/double/blue/golden_arrow{
+	light_power = 0.3;
+	brightness = 9
 	},
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2";
-	pixel_y = 25
+/obj/item/paper/crumpled{
+	pixel_y = 40;
+	pixel_x = 12
 	},
-/turf/open/floor/plating/plating_catwalk,
-/area/golden_arrow/platoonprep)
+/turf/open/floor/almayer/plate,
+/area/golden_arrow/platoon_commander_rooms)
 "kwe" = (
 /obj/structure/machinery/door_control{
 	id = "lowerstorage6";
@@ -21963,7 +21964,7 @@
 /area/golden_arrow/supply)
 "ljO" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-4-8"
+	icon_state = "1-2-8"
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/platoonprep)
@@ -22093,12 +22094,12 @@
 /turf/open/floor/almayer/floor,
 /area/golden_arrow/platoon_commander_rooms)
 "ltG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+/obj/item/paper/crumpled{
+	pixel_y = 17;
+	pixel_x = 23
 	},
 /turf/open/floor/almayer,
-/area/golden_arrow/platoonprep)
+/area/golden_arrow/platoon_commander_rooms)
 "lve" = (
 /obj/structure/machinery/door/poddoor/almayer{
 	name = "\improper Lower Storage Bay Three Blast Door";
@@ -22284,16 +22285,12 @@
 /turf/open/floor/almayer/floor,
 /area/golden_arrow/platoon_commander_rooms)
 "lIR" = (
-/obj/structure/surface/table/almayer,
-/obj/structure/machinery/faxmachine/uscm/command/capt{
-	pixel_y = 7
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
 	},
-/obj/item/device/flashlight/lamp/on{
-	pixel_y = -8;
-	pixel_x = 7
-	},
-/turf/open/floor/almayer,
-/area/golden_arrow/platoon_commander_rooms)
+/turf/open/floor/almayer/edge/smooth/endcap_right/west,
+/area/golden_arrow/platoonprep)
 "lJP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/machinery/light/double/blue/golden_arrow{
@@ -23750,15 +23747,12 @@
 /turf/open/floor/almayer/edge/north,
 /area/golden_arrow/motor_pool)
 "ond" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+/obj/item/paper/crumpled{
+	pixel_y = 31;
+	pixel_x = 6
 	},
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8";
-	pixel_x = -14
-	},
-/turf/open/floor/almayer/edge/smooth/endcap_right/west,
-/area/golden_arrow/platoonprep)
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "onj" = (
 /obj/structure/machinery/light/double/blue/golden_arrow,
 /turf/open/floor/almayer/sterile_green_side,
@@ -24041,7 +24035,7 @@
 	name = "CIC Lockdown Shutters"
 	},
 /obj/structure/machinery/door/airlock/multi_tile/almayer/almayer/glass{
-	req_access = list(12,17)
+	req_access = list(12)
 	},
 /turf/open/floor/almayer/test_floor4,
 /area/golden_arrow/platoon_commander_rooms)
@@ -24099,6 +24093,9 @@
 /area/golden_arrow/engineering)
 "pce" = (
 /turf/open/floor/almayer/uscm/directional/up_down,
+/area/golden_arrow/platoon_commander_rooms)
+"pcv" = (
+/turf/open/space/basic,
 /area/golden_arrow/platoon_commander_rooms)
 "pcD" = (
 /obj/structure/disposalpipe/segment,
@@ -24160,9 +24157,15 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/cryo_cells)
 "plq" = (
-/obj/structure/window/framed/almayer/hull,
-/turf/open/space/basic,
-/area/golden_arrow/platoon_commander_rooms)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/machinery/light/double/blue/golden_arrow{
+	dir = 4;
+	brightness = 15;
+	light_power = 15;
+	light_range = 15
+	},
+/turf/open/floor/almayer/edge/smooth/corner/north,
+/area/golden_arrow/platoonprep)
 "plY" = (
 /turf/open/floor/almayer/blue,
 /area/golden_arrow/platoon_commander_rooms)
@@ -24331,6 +24334,18 @@
 /obj/structure/cargo_container/uscm/borodino/mid,
 /turf/open/floor/almayer,
 /area/golden_arrow/supply)
+"pDO" = (
+/obj/structure/blocker/forcefield/vehicles{
+	layer = 5
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/turf/open/floor/almayer/test_floor4,
+/area/golden_arrow/platoonarmory)
 "pEw" = (
 /obj/structure/largecrate/random/case/small{
 	pixel_y = 5
@@ -24556,16 +24571,25 @@
 /turf/open/floor/almayer/greencorner/west,
 /area/golden_arrow/platoonprep)
 "pVB" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+/obj/structure/flora/pottedplant{
+	icon_state = "pottedplant_17";
+	pixel_y = 3;
+	pixel_x = 9;
+	layer = 3.6
 	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "door_warning";
-	dir = 4;
-	pixel_x = 2
+/obj/item/trash/cigbutt/ucigbutt{
+	pixel_y = 8;
+	pixel_x = -3
 	},
-/turf/open/floor/almayer/edge/smooth/endcap_right/east,
-/area/golden_arrow/platoonprep)
+/obj/item/trash/cigbutt/ucigbutt{
+	pixel_y = 13
+	},
+/obj/item/trash/cigbutt/ucigbutt{
+	pixel_y = 22;
+	pixel_x = -9
+	},
+/turf/open/floor/almayer/plate,
+/area/golden_arrow/platoon_commander_rooms)
 "pWS" = (
 /obj/structure/roof/cargocrane_tracks/horizontal{
 	pixel_y = 14
@@ -24887,15 +24911,16 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/platoonprep)
 "qDU" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+/obj/item/paper/crumpled{
+	pixel_y = 11;
+	pixel_x = 37
 	},
-/obj/structure/cable/heavyduty{
-	icon_state = "node";
-	layer = 2.38
+/obj/item/paper/crumpled{
+	pixel_y = 44;
+	pixel_x = 21
 	},
-/turf/open/floor/plating/plating_catwalk,
-/area/golden_arrow/platoonprep)
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "qEe" = (
 /obj/structure/machinery/computer/supply_drop_console/limited/alternate{
 	density = 1
@@ -26673,11 +26698,11 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/platoon_commander_rooms)
 "tVZ" = (
-/obj/structure/machinery/light/double/blue/golden_arrow{
-	light_power = 0.3;
-	brightness = 9
+/obj/structure/machinery/door/airlock/almayer/secure/reinforced/colony,
+/obj/structure/machinery/door/poddoor/shutters{
+	id = "GM"
 	},
-/turf/open/floor/almayer/plate,
+/turf/open/floor/almayer,
 /area/golden_arrow/platoon_commander_rooms)
 "tWA" = (
 /obj/effect/decal/warning_stripes{
@@ -26754,6 +26779,17 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/prep_hallway)
+"ugG" = (
+/obj/structure/surface/table/almayer,
+/obj/structure/machinery/faxmachine/uscm/command/capt{
+	pixel_y = 7
+	},
+/obj/item/device/flashlight/lamp/on{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/turf/open/floor/almayer,
+/area/golden_arrow/platoon_commander_rooms)
 "uhE" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "2-8"
@@ -26788,7 +26824,7 @@
 /obj/structure/phone_base/rotary/no_dnd{
 	name = "Brief Room";
 	phone_category = "Command";
-	phone_id = "Combat Information Center";
+	phone_id = "Brief Room";
 	pixel_x = -22;
 	pixel_y = 30;
 	icon_state = "wall_phone"
@@ -26811,6 +26847,12 @@
 /obj/structure/machinery/light/double/blue/golden_arrow{
 	dir = 4;
 	brightness = 9
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8"
 	},
 /turf/open/floor/almayer/green/north,
 /area/golden_arrow/platoonprep)
@@ -27165,9 +27207,9 @@
 	dir = 4
 	},
 /obj/structure/phone_base/rotary/no_dnd{
-	name = "Alpha Overwatch Telephone";
+	name = "CIC Reception Telephone";
 	phone_category = "Command";
-	phone_id = "Alpha Overwatch";
+	phone_id = "CIC Reception Telephone";
 	pixel_y = 12;
 	pixel_x = 7
 	},
@@ -27591,12 +27633,12 @@
 /turf/open/floor/almayer/cargo/southwest,
 /area/golden_arrow/hangar)
 "vVn" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/almayer,
-/area/space)
+/obj/structure/cable/heavyduty{
+	icon_state = "1-2-4"
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/golden_arrow/platoonprep)
 "vXr" = (
 /obj/structure/largecrate/random/case/double,
 /turf/open/floor/almayer/edge/smooth/west,
@@ -28456,6 +28498,10 @@
 	},
 /turf/open/floor/almayer/edge/smooth/north,
 /area/golden_arrow/hangar)
+"xPy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/almayer/outer,
+/area/space)
 "xPS" = (
 /obj/structure/window/framed/almayer/hull,
 /obj/structure/machinery/door/poddoor/shutters/almayer/open{
@@ -28528,9 +28574,8 @@
 "xXR" = (
 /obj/structure/machinery/door_control{
 	pixel_x = 6;
-	id = "BRIEF";
-	name = "Brief Lockdown";
-	req_access = list(19)
+	id = "GM";
+	name = "GM shutters"
 	},
 /obj/structure/machinery/door_control{
 	pixel_x = -5;
@@ -30005,7 +30050,7 @@ aiO
 aiO
 aiO
 aiO
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -30182,7 +30227,7 @@ aiP
 aiP
 aiP
 aiP
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -30359,7 +30404,7 @@ ahl
 ahl
 ahl
 ahl
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -30536,7 +30581,7 @@ ajD
 ajj
 ajj
 aiR
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -30713,7 +30758,7 @@ ajE
 ajx
 ajl
 aiS
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -30890,7 +30935,7 @@ ajH
 ajn
 ajn
 aiW
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31067,7 +31112,7 @@ afz
 ajo
 ajo
 aiZ
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31244,18 +31289,18 @@ ajJ
 ajz
 aja
 aja
-aPM
+ahl
 aEG
 aEG
 aEG
-mQb
+aEG
 ahl
 ahl
 ahl
 ahl
 ahl
 ahl
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31421,10 +31466,10 @@ ajK
 ajz
 aja
 aja
-aPM
+ahl
 aEG
 aEG
-mQb
+aEG
 ahl
 ahl
 anI
@@ -31433,7 +31478,7 @@ anl
 ane
 aPt
 ahl
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31598,9 +31643,9 @@ ajL
 ajt
 ajt
 ajb
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 ahl
 aum
@@ -31611,7 +31656,7 @@ afz
 amZ
 aPt
 ahl
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31775,9 +31820,9 @@ ajN
 aju
 aju
 ajd
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aiC
 anR
@@ -31788,7 +31833,7 @@ apS
 apS
 amR
 amN
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -31952,9 +31997,9 @@ ajJ
 ajC
 aja
 aja
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aiE
 anS
@@ -31965,7 +32010,7 @@ aio
 afz
 amV
 aid
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -32129,9 +32174,9 @@ ajJ
 ajz
 aja
 aja
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aod
 afz
@@ -32142,7 +32187,7 @@ aip
 ail
 apS
 aif
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -32306,9 +32351,9 @@ ajL
 ajv
 ajv
 ajf
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aof
 apS
@@ -32319,7 +32364,7 @@ aip
 aim
 apS
 amO
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -32483,9 +32528,9 @@ ajP
 ajv
 ajv
 ajf
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aoh
 apS
@@ -32496,7 +32541,7 @@ ang
 aim
 afz
 aii
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -32660,9 +32705,9 @@ ajJ
 ajz
 aja
 ajg
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aoi
 apS
@@ -32673,7 +32718,7 @@ anh
 aim
 afz
 aij
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -32837,9 +32882,9 @@ ajJ
 ajC
 aja
 aja
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aik
 anT
@@ -32850,7 +32895,7 @@ aiq
 ail
 apS
 aik
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -33014,9 +33059,9 @@ aeC
 ahl
 ahl
 ahl
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 amR
 afz
@@ -33027,7 +33072,7 @@ aip
 ail
 apS
 amR
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -33191,9 +33236,9 @@ aJq
 abl
 ajw
 ahl
-aPM
+ahl
 aEG
-mQb
+aEG
 ahl
 aol
 afz
@@ -33204,7 +33249,7 @@ aip
 ail
 afz
 aif
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -33368,9 +33413,9 @@ fMu
 ahl
 ahl
 ahl
-aPM
-aPM
-mQb
+ahl
+ahl
+aEG
 ahl
 aiI
 akW
@@ -33381,7 +33426,7 @@ ait
 afz
 acz
 amT
-aPM
+ahl
 aEG
 aEG
 aEG
@@ -33546,8 +33591,8 @@ afz
 aCC
 akt
 mCZ
-aPM
-mQb
+ahl
+aEG
 ahl
 aom
 anX
@@ -33558,7 +33603,7 @@ afz
 apS
 amX
 aie
-aPM
+ahl
 aEG
 aEG
 kuk
@@ -33723,8 +33768,8 @@ afz
 afz
 aDE
 atW
-aPM
-mQb
+ahl
+aEG
 ahl
 aoo
 aob
@@ -33735,8 +33780,8 @@ ahl
 anc
 ahl
 ahl
-aPM
-aEG
+ahl
+ahl
 aEG
 kuk
 abU
@@ -33913,7 +33958,7 @@ ain
 aeg
 ahl
 ahl
-aEG
+ahl
 aEG
 kuk
 abU
@@ -35329,7 +35374,7 @@ afz
 afz
 anb
 arW
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -35506,7 +35551,7 @@ aVO
 aWb
 afz
 aYR
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -35683,7 +35728,7 @@ ajc
 ajm
 afz
 aau
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -35860,7 +35905,7 @@ afz
 apS
 afz
 sGm
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -36037,7 +36082,7 @@ atA
 afz
 aVO
 aMl
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -36214,7 +36259,7 @@ ana
 ana
 aoj
 aNR
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -36375,7 +36420,7 @@ afz
 ahJ
 afz
 afz
-mQb
+afz
 irI
 afz
 ahZ
@@ -36391,7 +36436,7 @@ akg
 mSK
 pcJ
 aum
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -36568,7 +36613,7 @@ aDj
 vLe
 pcJ
 sGb
-aYG
+aPM
 aYG
 aYG
 aWh
@@ -36745,7 +36790,7 @@ saq
 vLe
 pcJ
 sdp
-aYG
+aPM
 aYG
 aYG
 aYG
@@ -36922,7 +36967,7 @@ aqa
 xLG
 pcJ
 aZl
-aYG
+aPM
 aYG
 aYG
 aYG
@@ -37099,7 +37144,7 @@ afO
 nzo
 aej
 abn
-aYG
+aPM
 aYG
 aYG
 aYG
@@ -37276,7 +37321,7 @@ acz
 aum
 aIl
 cwX
-aYG
+aPM
 aYG
 aYG
 aYG
@@ -38313,8 +38358,8 @@ aWi
 ioj
 aWi
 aWi
-dLD
-qDU
+vVn
+aWi
 dLD
 aWi
 ajy
@@ -38335,9 +38380,9 @@ ajy
 aWi
 xJo
 aWi
-aWi
+apj
 ljO
-kuH
+aWi
 aDQ
 aDQ
 aDQ
@@ -38490,14 +38535,7 @@ nEn
 nEn
 nEn
 nEn
-eAa
-ond
-nex
-nex
-aAO
-nex
-nex
-nex
+lIR
 nex
 nex
 nex
@@ -38510,10 +38548,17 @@ nex
 nex
 aAO
 nex
+nex
+nex
+nex
+nex
+nex
+aAO
 nex
 nex
 nex
 rMQ
+nex
 eAa
 aDQ
 aDQ
@@ -38667,8 +38712,8 @@ avw
 aVW
 aVW
 avw
-aAO
 vlV
+aAO
 aAO
 oJz
 oJz
@@ -38676,7 +38721,7 @@ lTE
 aAO
 aAO
 aAO
-abN
+aAO
 aQf
 aAO
 aQf
@@ -38689,8 +38734,8 @@ cfS
 oJz
 oJz
 oJz
-aAO
-ltG
+vlV
+aQf
 aQf
 aDQ
 aDQ
@@ -38834,18 +38879,18 @@ ieS
 oyq
 avw
 avw
-avw
 sPB
 avw
 avw
-aVW
-all
+avw
+plq
+avw
 avw
 avw
 avw
 aAO
+abN
 aAx
-pVB
 cdF
 pXW
 udB
@@ -38867,7 +38912,7 @@ pXW
 qgb
 mNu
 umj
-pVB
+aAx
 aAx
 aDQ
 aDQ
@@ -39009,13 +39054,12 @@ tmN
 tmN
 tmN
 aDh
-aDh
 tmN
 nRC
 tmN
+cJt
 aoT
 cJt
-plq
 tmN
 tmN
 ivm
@@ -39044,8 +39088,9 @@ oWU
 oWU
 oWU
 act
-jOP
+pDO
 aGm
+act
 act
 act
 act
@@ -39186,7 +39231,6 @@ mHq
 bIe
 aUb
 aDh
-aDh
 xQS
 tXh
 fpt
@@ -39225,6 +39269,7 @@ aIx
 dzT
 act
 abA
+act
 act
 ozg
 aqk
@@ -39363,13 +39408,12 @@ hIP
 pbD
 mWi
 aDh
-aDh
 ayP
 fpt
 fpt
-fpt
-fpt
-hhL
+ltG
+jOP
+ugG
 ayP
 tmN
 bMS
@@ -39400,6 +39444,7 @@ act
 act
 nnZ
 aBt
+act
 act
 act
 act
@@ -39540,13 +39585,12 @@ fZz
 iJr
 rzH
 aDh
-aDh
-ayP
+ape
 nVl
 axS
 aHw
 fpt
-lIR
+aSv
 ayP
 tmN
 ssW
@@ -39579,6 +39623,7 @@ alf
 aDf
 lPm
 adl
+act
 act
 ozg
 ozg
@@ -39717,14 +39762,13 @@ uFy
 fRm
 bhi
 aDh
-aDh
 ayP
 fZA
 efN
 fpt
-fpt
-fpt
-tVZ
+ond
+all
+kuH
 tmN
 dvJ
 amD
@@ -39756,6 +39800,7 @@ xLU
 aBt
 lPm
 aDg
+act
 act
 ozg
 ozg
@@ -39894,12 +39939,11 @@ kbp
 aGB
 iNc
 aDh
-aDh
-ayP
+ape
 nVl
 axS
 aHw
-fpt
+qDU
 fpt
 ayP
 aDh
@@ -39931,6 +39975,7 @@ syi
 amY
 nAF
 aBt
+act
 act
 act
 act
@@ -40071,13 +40116,12 @@ aDh
 aDh
 aDh
 aDh
-aDh
 jDm
 aSt
 kpv
 fpt
 fpt
-fpt
+jBO
 ayP
 aDh
 ace
@@ -40110,6 +40154,7 @@ xLU
 aMK
 lPm
 aOt
+act
 act
 amI
 amI
@@ -40247,14 +40292,13 @@ aEG
 aEG
 aEG
 aEG
-kuk
-vVn
+xPy
 abf
 aDh
 aDh
 aDh
 amr
-ape
+pVB
 ayP
 aDh
 olf
@@ -40287,6 +40331,7 @@ amw
 moW
 lPm
 aur
+act
 act
 adz
 adz
@@ -40424,15 +40469,14 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 fpt
 fpt
 aDh
 aDh
 aDh
-apj
+tVZ
 aDh
 act
 act
@@ -40462,6 +40506,7 @@ act
 act
 aQZ
 pFz
+act
 act
 act
 act
@@ -40601,14 +40646,13 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 fpt
 fpt
 fpt
 fpt
-fpt
+hhL
 fpt
 aDh
 aoc
@@ -40641,6 +40685,7 @@ wja
 ati
 lPm
 aoc
+act
 act
 vRh
 cWj
@@ -40778,9 +40823,8 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 tVX
 fpt
 fpt
@@ -40818,6 +40862,7 @@ aRF
 aBt
 lPm
 ojW
+act
 act
 pqV
 xTB
@@ -40955,9 +41000,8 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 fpt
 fpt
 fpt
@@ -40995,6 +41039,7 @@ aRF
 aBt
 lPm
 ojW
+act
 act
 vRh
 mce
@@ -41132,9 +41177,8 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 fpt
 fpt
 fpt
@@ -41172,6 +41216,7 @@ aRF
 ati
 lPm
 ojW
+act
 act
 aWa
 aWa
@@ -41309,9 +41354,8 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 fpt
 fpt
 kYZ
@@ -41349,6 +41393,7 @@ wja
 ati
 lPm
 aEr
+act
 act
 adz
 aWa
@@ -41486,16 +41531,15 @@ aEG
 aEG
 aEG
 aEG
-aEG
 kuk
-aDh
+aPM
 aDh
 aDh
 aDh
 aDh
 aDh
 abf
-act
+aDh
 aAu
 amD
 aGS
@@ -41526,6 +41570,7 @@ aWl
 adV
 lPm
 aAu
+act
 act
 adz
 afN
@@ -44848,7 +44893,7 @@ kuk
 kuk
 aEG
 aEG
-aEG
+pcv
 aEG
 aEG
 aEG
