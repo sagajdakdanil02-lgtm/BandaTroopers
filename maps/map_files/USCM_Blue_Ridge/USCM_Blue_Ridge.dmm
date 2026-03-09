@@ -3178,7 +3178,7 @@
 /area/golden_arrow/cryo_cells)
 "agB" = (
 /obj/structure/machinery/iv_drip,
-/turf/open/floor/almayer/dark_sterile,
+/turf/open/floor/almayer/sterile_green_side/northwest,
 /area/golden_arrow/medical)
 "agC" = (
 /obj/effect/decal/warning_stripes{
@@ -6807,7 +6807,7 @@
 /obj/effect/decal/medical_decals{
 	icon_state = "triagedecaldir"
 	},
-/turf/open/floor/almayer/dark_sterile,
+/turf/open/floor/almayer/sterile_green_side/southeast,
 /area/golden_arrow/medical)
 "amN" = (
 /obj/structure/closet/crate/trashcart,
@@ -9444,24 +9444,11 @@
 /turf/open/floor/almayer/edge,
 /area/golden_arrow/supply)
 "auO" = (
-/obj/structure/surface/table/reinforced/prison,
-/obj/item/storage/firstaid/regular{
-	pixel_y = 2;
-	pixel_x = -6
+/obj/structure/machinery/cm_vending/sorted/medical/blood{
+	pixel_x = -1;
+	chem_refill = 1
 	},
-/obj/item/storage/firstaid/regular{
-	pixel_y = -4;
-	pixel_x = -6
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 8;
-	pixel_y = 2
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_y = -4;
-	pixel_x = 8
-	},
-/turf/open/floor/almayer/sterile_green_side/west,
+/turf/open/floor/almayer/sterile_green_side,
 /area/golden_arrow/medical)
 "auP" = (
 /turf/open/floor/almayer/emeraldcorner/west,
@@ -10393,29 +10380,11 @@
 /turf/open/floor/almayer,
 /area/golden_arrow/hangar)
 "azc" = (
-/obj/structure/surface/table/reinforced/prison,
-/obj/item/storage/belt/medical/only_scanner,
-/obj/item/storage/belt/medical/only_scanner,
-/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
-	pixel_x = -5;
-	pixel_y = 5
+/obj/structure/machinery/cm_vending/sorted/medical/blood{
+	pixel_x = -1;
+	chem_refill = 1
 	},
-/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
-	pixel_x = -5;
-	pixel_y = 11
-	},
-/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
-	pixel_x = 6;
-	pixel_y = 11
-	},
-/obj/structure/machinery/light/double/blue/golden_arrow{
-	dir = 8
-	},
-/turf/open/floor/almayer/sterile_green_side/west,
+/turf/open/floor/almayer/sterile_green_corner/west,
 /area/golden_arrow/medical)
 "aze" = (
 /obj/structure/cable/heavyduty{
@@ -15404,63 +15373,32 @@
 /turf/open/floor/almayer/plate,
 /area/golden_arrow/hangar)
 "aSV" = (
-/obj/item/storage/firstaid/softpack{
-	pixel_y = 9;
-	pixel_x = 5
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/accessory/stethoscope,
+/obj/item/device/flashlight/pen{
+	pixel_y = 6;
+	pixel_x = -5
 	},
-/obj/item/storage/firstaid/softpack{
-	pixel_y = 9;
-	pixel_x = 5
+/obj/item/device/flashlight/pen{
+	pixel_y = 6;
+	pixel_x = -5
 	},
-/obj/item/storage/firstaid/softpack{
-	pixel_y = 9;
-	pixel_x = 5
+/obj/item/device/flashlight/pen{
+	pixel_y = 6;
+	pixel_x = -5
 	},
-/obj/item/storage/firstaid/softpack{
-	pixel_y = 9;
-	pixel_x = 5
+/obj/item/device/flashlight/pen{
+	pixel_y = 6;
+	pixel_x = -5
 	},
-/obj/item/storage/firstaid/softpack/burn{
-	pixel_y = 9;
-	pixel_x = -9;
-	layer = 3.01
-	},
-/obj/item/storage/firstaid/softpack/burn{
-	pixel_y = 9;
-	pixel_x = -9;
-	layer = 3.01
-	},
-/obj/item/storage/firstaid/softpack/burn{
-	pixel_y = 9;
-	pixel_x = -9;
-	layer = 3.01
-	},
-/obj/item/storage/firstaid/softpack/burn{
-	pixel_y = 9;
-	pixel_x = -9;
-	layer = 3.01
-	},
-/obj/item/storage/firstaid/softpack/brute{
-	pixel_x = -2;
-	pixel_y = 0
-	},
-/obj/item/storage/firstaid/softpack/brute{
-	pixel_x = -2;
-	pixel_y = 0
-	},
-/obj/item/storage/firstaid/softpack/brute{
-	pixel_x = -2;
-	pixel_y = 0
-	},
-/obj/item/storage/firstaid/softpack/brute{
-	pixel_x = -2;
-	pixel_y = 0
-	},
+/obj/item/book/manual/medical_diagnostics_manual,
 /obj/structure/surface/table/reinforced/prison,
-/obj/effect/decal/warning_stripes{
-	icon_state = "SE-out"
+/obj/structure/machinery/light/double/blue/golden_arrow{
+	dir = 8
 	},
-/turf/open/floor/almayer/sterile_green_corner/west,
+/turf/open/floor/almayer/sterile_green_side/west,
 /area/golden_arrow/medical)
 "aTf" = (
 /obj/effect/decal/medical_decals{
@@ -17834,6 +17772,14 @@
 	pixel_x = 9;
 	pixel_y = 0
 	},
+/obj/item/ammo_magazine/shotgun/buckshot{
+	pixel_x = -6;
+	pixel_y = 0
+	},
+/obj/item/ammo_magazine/shotgun/slugs{
+	pixel_x = -6;
+	pixel_y = 14
+	},
 /turf/open/floor/almayer/plate,
 /area/golden_arrow/platoonarmory)
 "cOh" = (
@@ -18378,29 +18324,26 @@
 /turf/open/floor/almayer/edge/smooth/east,
 /area/golden_arrow/hangar)
 "dRK" = (
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/device/flashlight/pen{
-	pixel_y = 6;
-	pixel_x = -5
-	},
-/obj/item/device/flashlight/pen{
-	pixel_y = 6;
-	pixel_x = -5
-	},
-/obj/item/device/flashlight/pen{
-	pixel_y = 6;
-	pixel_x = -5
-	},
-/obj/item/device/flashlight/pen{
-	pixel_y = 6;
-	pixel_x = -5
-	},
-/obj/item/book/manual/medical_diagnostics_manual,
 /obj/structure/surface/table/reinforced/prison,
-/turf/open/floor/almayer/sterile_green_side/west,
+/obj/item/storage/belt/medical/only_scanner,
+/obj/item/storage/belt/medical/only_scanner,
+/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/obj/item/reagent_container/hypospray/autoinjector/adrenaline_concentrated{
+	pixel_x = 6;
+	pixel_y = 11
+	},
+/turf/open/floor/almayer/sterile_green_side/north,
 /area/golden_arrow/medical)
 "dRV" = (
 /obj/effect/decal/warning_stripes{
@@ -18560,6 +18503,65 @@
 	},
 /turf/open/floor/almayer/edge/southeast,
 /area/golden_arrow/platoon_commander_rooms)
+"eiN" = (
+/obj/item/storage/firstaid/softpack{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid/softpack{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid/softpack{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid/softpack{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/firstaid/softpack/burn{
+	pixel_y = 9;
+	pixel_x = -9;
+	layer = 3.01
+	},
+/obj/item/storage/firstaid/softpack/burn{
+	pixel_y = 9;
+	pixel_x = -9;
+	layer = 3.01
+	},
+/obj/item/storage/firstaid/softpack/burn{
+	pixel_y = 9;
+	pixel_x = -9;
+	layer = 3.01
+	},
+/obj/item/storage/firstaid/softpack/burn{
+	pixel_y = 9;
+	pixel_x = -9;
+	layer = 3.01
+	},
+/obj/item/storage/firstaid/softpack/brute{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/storage/firstaid/softpack/brute{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/storage/firstaid/softpack/brute{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/storage/firstaid/softpack/brute{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/structure/surface/table/reinforced/prison,
+/obj/effect/decal/warning_stripes{
+	icon_state = "SE-out"
+	},
+/turf/open/floor/almayer/sterile_green_side/east,
+/area/golden_arrow/medical)
 "ekn" = (
 /obj/structure/largecrate,
 /obj/item/ammo_box/magazine/nade_box/smoke/red{
@@ -20658,6 +20660,26 @@
 	},
 /turf/open/floor/almayer/cargo/southwest,
 /area/golden_arrow/hangar)
+"itz" = (
+/obj/structure/surface/table/reinforced/prison,
+/obj/item/storage/firstaid/regular{
+	pixel_y = 2;
+	pixel_x = -6
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_y = -4;
+	pixel_x = -6
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_y = -4;
+	pixel_x = 8
+	},
+/turf/open/floor/almayer/sterile_green_side/north,
+/area/golden_arrow/medical)
 "itW" = (
 /obj/docking_port/stationary/trijent_elevator/shipmap_elevator/cargo{
 	id = "garrow_cargo_elevator_storage";
@@ -21964,7 +21986,8 @@
 /area/golden_arrow/dorms)
 "kXG" = (
 /obj/structure/machinery/cm_vending/sorted/medical/blood{
-	pixel_x = -1
+	pixel_x = -1;
+	chem_refill = 1
 	},
 /obj/structure/machinery/light/double/blue/golden_arrow{
 	dir = 4;
@@ -22493,6 +22516,9 @@
 "lQZ" = (
 /turf/open/floor/almayer/cargo,
 /area/golden_arrow/supply)
+"lRf" = (
+/turf/open/floor/almayer/sterile_green_side/northeast,
+/area/golden_arrow/medical)
 "lRg" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -25024,6 +25050,12 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/hangar)
+"qJL" = (
+/obj/structure/machinery/cm_vending/sorted/medical{
+	pixel_x = -1
+	},
+/turf/closed/wall/almayer/white/hull,
+/area/golden_arrow/medical)
 "qLh" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "W";
@@ -28260,7 +28292,7 @@
 /obj/effect/decal/medical_decals{
 	icon_state = "triagedecaldir"
 	},
-/turf/open/floor/almayer/sterile_green_side,
+/turf/open/floor/almayer/sterile_green_side/southwest,
 /area/golden_arrow/medical)
 "xcJ" = (
 /obj/structure/machinery/light/double/blue/golden_arrow{
@@ -38469,11 +38501,11 @@ aop
 unG
 uJx
 ryT
-aWC
-aWC
-aWC
-aWC
-aWC
+aux
+ayI
+aSV
+ayI
+azc
 aWC
 aWC
 arC
@@ -38646,11 +38678,11 @@ aKW
 aKW
 onj
 aWC
-aWC
-aWC
-aWC
-aWC
-aWC
+itz
+uel
+eiN
+aKW
+auO
 aWC
 aWC
 arC
@@ -38823,11 +38855,11 @@ aeH
 acR
 aAZ
 awK
-aux
-auO
-azc
 dRK
-aSV
+alG
+aQh
+azo
+aaT
 auV
 ozg
 ozg
@@ -39001,9 +39033,9 @@ tXf
 xch
 axM
 agB
-aKW
-aKW
-aKW
+ayI
+aQh
+ayI
 rAj
 aCS
 aFb
@@ -39177,9 +39209,9 @@ aKW
 aKW
 amM
 azV
-acR
+lRf
 uel
-aKW
+ayI
 aKW
 emr
 aCS
@@ -40245,7 +40277,7 @@ acR
 aaT
 acR
 eTr
-ozg
+qJL
 aEG
 aEG
 aEG
