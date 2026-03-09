@@ -8021,33 +8021,13 @@
 "aoC" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/golden_arrow/platoon_commander_rooms)
-"aoD" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
-/turf/open/floor/almayer_hull/outerhull_dir/northwest,
-/area/space)
 "aoE" = (
 /obj/vehicle/powerloader,
 /turf/open/floor/almayer,
 /area/golden_arrow/supply)
 "aoF" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
-/turf/open/floor/almayer_hull/outerhull_dir/northeast,
-/area/space)
-"aoG" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
-/turf/open/floor/almayer_hull/outerhull_dir/west,
-/area/space)
-"aoH" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
-/turf/open/floor/almayer_hull/outerhull_dir/east,
+/obj/item/lightstick/red/variant/planted,
+/turf/open/floor/almayer_hull/outerhull_dir,
 /area/space)
 "aoI" = (
 /obj/structure/platform_decoration,
@@ -8055,25 +8035,16 @@
 /area/golden_arrow/supply)
 "aoJ" = (
 /obj/item/lightstick/red/variant/planted,
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
 /turf/open/floor/almayer_hull/outerhull_dir/west,
 /area/space)
 "aoK" = (
 /obj/item/lightstick/red/variant/planted,
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
 /turf/open/floor/almayer_hull/outerhull_dir/east,
 /area/space)
 "aoL" = (
 /turf/open/floor/almayer/uscm/directional/up_down/north,
 /area/golden_arrow/prep_hallway)
 "aoM" = (
-/obj/structure/blocker/invisible_wall{
-	opacity = 1
-	},
 /turf/open/floor/almayer_hull/outerhull_dir/north,
 /area/space)
 "aoN" = (
@@ -8202,16 +8173,6 @@
 "app" = (
 /obj/structure/prop/almayer/sadar_decoration{
 	pixel_y = 29
-	},
-/obj/structure/prop{
-	name = "\improper seat-like case";
-	desc = "It's a case made into an impromptu seat.";
-	icon_state = "case";
-	icon = 'icons/obj/structures/crates.dmi';
-	can_buckle = 1;
-	pixel_y = 7;
-	layer = 3.6;
-	pixel_x = 0
 	},
 /turf/open/floor/almayer/blue/north,
 /area/golden_arrow/platoonarmory)
@@ -17309,6 +17270,9 @@
 "bYz" = (
 /obj/structure/largecrate/random/case/double{
 	pixel_y = 12
+	},
+/obj/effect/landmark/personal_weapon{
+	pixel_y = -9
 	},
 /turf/open/floor/almayer,
 /area/golden_arrow/platoonprep)
@@ -28091,6 +28055,9 @@
 	},
 /turf/open/floor/almayer,
 /area/golden_arrow/prep_hallway)
+"wLv" = (
+/turf/open/floor/almayer_hull/outerhull_dir,
+/area/space)
 "wLy" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4"
@@ -36134,8 +36101,8 @@ kuk
 frR
 kuk
 kuk
-kuk
-kuk
+aEG
+aEG
 kuk
 kuk
 kuk
@@ -36306,8 +36273,8 @@ aEG
 aEG
 aEG
 aEG
-eNJ
-kuk
+aEG
+aEG
 aDh
 aDh
 aDh
@@ -36483,8 +36450,8 @@ aEG
 aEG
 aEG
 aEG
-kuk
-kuk
+aEG
+aEG
 ipR
 eZk
 aUv
@@ -36660,8 +36627,8 @@ aEG
 aEG
 aEG
 aEG
-kuk
-kuk
+aEG
+aEG
 xPS
 aaK
 cfj
@@ -37187,9 +37154,9 @@ aEG
 aEG
 exb
 aoJ
-aoG
-aoG
-aoD
+mpM
+mpM
+exb
 aoB
 aDh
 aDh
@@ -37359,10 +37326,10 @@ aEG
 aEG
 aEG
 exb
-aoG
-aoG
-aoG
-aoD
+mpM
+mpM
+mpM
+exb
 aDh
 jMD
 aGv
@@ -37531,7 +37498,7 @@ aEG
 aEG
 aEG
 aEG
-aEG
+exb
 mpM
 mpM
 exb
@@ -37705,10 +37672,10 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
+exb
+mpM
+mpM
+mpM
 mpM
 exb
 aDh
@@ -37877,16 +37844,16 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aEG
 exb
 mpM
 mpM
-aoD
+exb
+mpM
+mpM
+mpM
+mpM
+aDr
+exb
 aDh
 aDh
 aHt
@@ -38051,19 +38018,19 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aEG
 exb
 mpM
 mpM
 aDr
 aDr
 rJr
-aoB
+aaj
+aaj
+aoK
+aaj
+aaj
+mpM
+aDr
 wvU
 axm
 gyk
@@ -38235,12 +38202,12 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aoB
+rJr
+rJr
+aaj
+aDr
+aDr
+aDr
 wvU
 sxA
 rUA
@@ -38413,10 +38380,10 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
+aoM
+wLv
+aoM
+aoF
 aoM
 wvU
 mWO
@@ -38589,12 +38556,12 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aoB
+exb
+exb
+mpM
+aDr
+aDr
+aDr
 wvU
 mcY
 aaK
@@ -38759,19 +38726,19 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aEG
 rJr
 aaj
 aaj
 aDr
 aDr
 exb
-aoB
+mpM
+mpM
+aoJ
+mpM
+mpM
+aaj
+aDr
 wvU
 axm
 gyk
@@ -38939,16 +38906,16 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
-aEG
-aEG
 rJr
 aaj
 aaj
-aoF
+rJr
+aaj
+aaj
+aaj
+aaj
+aDr
+rJr
 aDh
 aDh
 aUX
@@ -39121,10 +39088,10 @@ aEG
 aEG
 aEG
 aEG
-aEG
-aEG
-aEG
-aEG
+rJr
+aaj
+aaj
+aaj
 aaj
 rJr
 aDh
@@ -39301,7 +39268,7 @@ aEG
 aEG
 aEG
 aEG
-aEG
+rJr
 aaj
 aaj
 rJr
@@ -39483,10 +39450,10 @@ aEG
 aEG
 aEG
 rJr
-aoH
-aoH
-aoH
-aoF
+aaj
+aaj
+aaj
+rJr
 aDh
 aGv
 aGv
@@ -39665,10 +39632,10 @@ aEG
 aEG
 rJr
 aoK
-aoH
-aoH
-aoF
-aoB
+aaj
+aaj
+rJr
+aDr
 aDh
 aDh
 aDh
