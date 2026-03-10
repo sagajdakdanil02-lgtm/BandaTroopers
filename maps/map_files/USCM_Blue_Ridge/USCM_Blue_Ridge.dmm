@@ -1404,7 +1404,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/effect/landmark/start/marine/rto/delta{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Delta"
 	},
 /turf/open/floor/almayer/plate,
@@ -1556,7 +1556,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/effect/landmark/start/marine/rto/charlie{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Charlie"
 	},
 /turf/open/floor/almayer/plate,
@@ -1581,7 +1581,7 @@
 	pixel_y = 8;
 	dir = 8
 	},
-/obj/effect/landmark/start/marine/rto/charlie{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Charlie"
 	},
 /turf/open/floor/almayer/plate,
@@ -2360,7 +2360,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/effect/landmark/start/marine/rto/bravo{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Bravo"
 	},
 /turf/open/floor/almayer/plate,
@@ -2374,7 +2374,7 @@
 	pixel_y = 8;
 	dir = 8
 	},
-/obj/effect/landmark/start/marine/rto/bravo{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Bravo"
 	},
 /turf/open/floor/almayer/plate,
@@ -4096,7 +4096,7 @@
 "aiA" = (
 /obj/effect/landmark/late_join,
 /obj/effect/landmark/late_join/delta,
-/obj/effect/landmark/start/marine/rto/delta{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Delta"
 	},
 /turf/open/floor/almayer/plate,
@@ -4156,7 +4156,7 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/effect/landmark/start/marine/rto/alpha{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Alpha"
 	},
 /turf/open/floor/plating/plating_catwalk,
@@ -8917,7 +8917,7 @@
 "asK" = (
 /obj/effect/landmark/late_join/alpha,
 /obj/effect/landmark/late_join,
-/obj/effect/landmark/start/marine/rto/alpha{
+/obj/effect/landmark/start/marine/rto{
 	squad = "Alpha"
 	},
 /turf/open/floor/plating/plating_catwalk,
@@ -24128,9 +24128,6 @@
 /area/golden_arrow/engineering)
 "pce" = (
 /turf/open/floor/almayer/uscm/directional/up_down,
-/area/golden_arrow/platoon_commander_rooms)
-"pcv" = (
-/turf/open/space/basic,
 /area/golden_arrow/platoon_commander_rooms)
 "pcD" = (
 /obj/structure/disposalpipe/segment,
@@ -41948,7 +41945,7 @@ aEG
 aEG
 aEG
 aEG
-pcv
+aEG
 aEG
 aEG
 aEG
@@ -44955,7 +44952,7 @@ kuk
 kuk
 aEG
 aEG
-pcv
+aEG
 aEG
 aEG
 aEG
