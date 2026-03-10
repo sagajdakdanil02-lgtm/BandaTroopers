@@ -44,7 +44,7 @@ endmap
 
 # SS220 EDIT - START
 
-map blue_ridge
+map USСM_Blue_Ridge
 	default
 endmap
 
