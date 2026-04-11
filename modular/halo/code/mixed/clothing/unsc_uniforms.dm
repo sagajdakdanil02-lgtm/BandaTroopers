@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/marine/crew
 	name = "\improper UNSC crewman uniform"
-	desc = "Standard-issue UNSC crewman uniform, normally worn by non-combat personnel and comes in a variety of colors depending on the wearer's role aboard a ship or station."
+	desc = "Штатная форма члена экипажа ККОН, обычно носимая небоевым персоналом и выпускаемая в разных цветах в зависимости от роли носителя на корабле или станции."
 	flags_jumpsuit = null
 	flags_atom = NO_SNOW_TYPE|NO_NAME_OVERRIDE
 	icon = 'icons/halo/obj/items/clothing/undersuit.dmi'

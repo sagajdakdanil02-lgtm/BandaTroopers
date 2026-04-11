@@ -27,6 +27,7 @@
 	var/faction = FACTION_NEUTRAL
 	var/list/faction_group
 	var/origin_override
+	var/expected_species = null // SS220 EDIT: modular spawn glue may reassert preset species after shared arm_equipment() completes
 
 	var/minimap_icon = "private"
 	var/minimap_background = MINIMAP_ICON_BACKGROUND_USCM
@@ -117,7 +118,7 @@
 				new_human.f_style = pick("Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "3 O'clock Shadow", "3 O'clock Shadow", "3 O'clock Shadow", "3 O'clock Moustache", "5 O'clock Shadow", "5 O'clock Moustache", "7 O'clock Shadow", "7 O'clock Moustache",)
 			else
 				new_human.h_style = pick("Undercut, Top", "CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right", "Scully", "Pvt. Redding", "Bun", "Short Bangs")
-			new_human.change_real_name(new_human, random_name)
+			new_human.change_real_name(new_human, random_name) // SS220 EDIT: localized personal-name banks now provide direct Cyrillic output
 		if(JAPANESE_ETHNICITY)
 			new_human.skin_color = pick(50;"Pale 1",50;"Tan 1")
 			var/static/list/colors = list("BLACK" = list(15, 15, 10), "BLACK" = list(15, 15, 10))
@@ -135,25 +136,16 @@
 			new_human.b_eyes = colors[eye_color][3]
 			//gender checks
 			if(new_human.gender == MALE)
-				if(prob(90))
-					first_name = "[capitalize(randomly_generate_japanese_word(rand(1, 3)))]"
-				else
-					first_name = "[pick(GLOB.first_names_male_clf)]"
+				first_name = ss220_pick_japanese_first_name(MALE) // SS220 EDIT: personal names should come from direct localized Japanese banks
 				new_human.h_style = pick("CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right")
 				new_human.f_style = pick("Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "3 O'clock Shadow", "5 O'clock Shadow", "7 O'clock Shadow",)
 			else
-				if(prob(90))
-					first_name = "[capitalize(randomly_generate_japanese_word(rand(1, 3)))]"
-				else
-					first_name = "[pick(GLOB.first_names_female_clf)]"
+				first_name = ss220_pick_japanese_first_name(FEMALE) // SS220 EDIT: personal names should come from direct localized Japanese banks
 				new_human.h_style = pick("CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right","Bun", "Short Bangs")
 			//surname
-			if(prob(90))
-				last_name = "[capitalize(randomly_generate_japanese_word(rand(1, 4)))]"
-			else
-				last_name = "[pick(GLOB.last_names_clf)]"
+			last_name = ss220_pick_japanese_last_name() // SS220 EDIT: retire runtime Japanese word synthesis for names
 			random_name = "[first_name] [last_name]"
-			new_human.change_real_name(new_human, random_name)
+			new_human.change_real_name(new_human, random_name) // SS220 EDIT: direct localized banks already provide the runtime name
 		if(AMERICAN_ETHNICITY)
 			random_name = capitalize(pick(new_human.gender == MALE ? GLOB.first_names_male : GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
 			var/datum/preferences/A = new
@@ -176,30 +168,21 @@
 				new_human.f_style = pick("Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "3 O'clock Shadow", "3 O'clock Shadow", "3 O'clock Shadow", "3 O'clock Moustache", "5 O'clock Shadow", "5 O'clock Moustache", "7 O'clock Shadow", "7 O'clock Moustache",)
 			else
 				new_human.h_style = pick("Undercut, Top", "CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right", "Scully", "Pvt. Redding", "Bun", "Short Bangs")
-			new_human.change_real_name(new_human, random_name)
+			new_human.change_real_name(new_human, random_name) // SS220 EDIT: localized personal-name banks now provide direct Cyrillic output
 		if(UPP_ETHNICITY)
 			var/datum/preferences/A = new()
 			A.randomize_appearance(new_human)
 			//gender checks
 			if(new_human.gender == MALE)
-				if(prob(40))
-					first_name = "[capitalize(randomly_generate_chinese_word(1))]"
-				else
-					first_name = "[pick(GLOB.first_names_male_upp)]"
+				first_name = "[pick(GLOB.first_names_male_upp)]" // SS220 EDIT: direct localized UPP banks replace runtime Chinese word synthesis
 				new_human.f_style = pick("3 O'clock Shadow", "3 O'clock Moustache", "5 O'clock Shadow", "5 O'clock Moustache")
 			else
-				if(prob(40))
-					first_name = "[capitalize(randomly_generate_chinese_word(1))]"
-				else
-					first_name = "[pick(GLOB.first_names_female_upp)]"
+				first_name = "[pick(GLOB.first_names_female_upp)]" // SS220 EDIT: direct localized UPP banks replace runtime Chinese word synthesis
 			//surname
-			if(prob(35))
-				last_name = "[capitalize(randomly_generate_chinese_word(pick(20;1, 80;2)))]"
-			else
-				last_name = "[pick(GLOB.last_names_upp)]"
+			last_name = "[pick(GLOB.last_names_upp)]" // SS220 EDIT: direct localized UPP banks replace runtime Chinese word synthesis
 			//put them together
 			random_name = "[first_name] [last_name]"
-			new_human.change_real_name(new_human, random_name)
+			new_human.change_real_name(new_human, random_name) // SS220 EDIT: direct localized banks already provide the runtime name
 			var/static/list/colors = list("BLACK" = list(15, 15, 10), "BROWN" = list(48, 38, 18), "BROWN" = list(48, 38, 18),"BLUE" = list(29, 51, 65), "GREEN" = list(40, 61, 39), "STEEL" = list(46, 59, 54))
 			var/static/list/hair_colors = list("BLACK" = list(15, 15, 10), "BROWN" = list(48, 38, 18), "AUBURN" = list(77, 48, 36), "BLONDE" = list(95, 76, 44))
 			var/hair_color = pick(hair_colors)
@@ -235,16 +218,16 @@
 			new_human.b_eyes = colors[eye_color][3]
 			//gender checks
 			if(new_human.gender == MALE)
-				first_name = "[capitalize(randomly_generate_chinese_word(rand(1, 3)))]"
+				first_name = ss220_pick_chinese_first_name(MALE) // SS220 EDIT: use explicit localized Chinese personal-name banks
 				new_human.h_style = pick("CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right")
 				new_human.f_style = pick("Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "Shaved", "3 O'clock Shadow", "5 O'clock Shadow", "7 O'clock Shadow",)
 			else
-				first_name = "[capitalize(randomly_generate_chinese_word(rand(1, 3)))]"
+				first_name = ss220_pick_chinese_first_name(FEMALE) // SS220 EDIT: use explicit localized Chinese personal-name banks
 				new_human.h_style = pick("CIA", "Mulder", "Pixie Cut Left", "Pixie Cut Right","Bun", "Short Bangs")
 			//surname
-			last_name = "[capitalize(randomly_generate_chinese_word(rand(1, 4)))]"
+			last_name = ss220_pick_chinese_last_name() // SS220 EDIT: retire runtime Chinese word synthesis for names
 			random_name = "[first_name] [last_name]"
-			new_human.change_real_name(new_human, random_name)
+			new_human.change_real_name(new_human, random_name) // SS220 EDIT: direct localized banks already provide the runtime name
 		if(BRAZILIAN_ETHNICITY)
 			new_human.skin_color = pick(45;"Tan 3",10;"Tan 2",15;"Dark 1",10;"Dark 3",10;"Melanated",5;"Pale 3",5;"Pale 2")
 			random_name = capitalize(pick(new_human.gender == MALE ? GLOB.first_names_male_brazilian : GLOB.first_names_female_brazilian)) + " " + capitalize(pick(GLOB.last_names_brazilian))
@@ -274,6 +257,8 @@
 		new_human.age = minimum_age
 
 /datum/equipment_preset/proc/load_rank(mob/living/carbon/human/new_human, client/mob_client)//Beagle-Code
+	if(isnull(paygrades))
+		return null
 	if(paygrades.len == 1)
 		return paygrades[1]
 	var/playtime
@@ -329,7 +314,7 @@
 	ID.registered_gid = new_human.gid
 	ID.blood_type = new_human.blood_type
 	ID.paygrade = load_rank(new_human, mob_client) || ID.paygrade
-	var/datum/money_account/acct = create_account(new_human, rand(30, 50), GLOB.paygrades[ID.paygrade])
+	var/datum/money_account/acct = create_account(new_human.real_name, rand(30, 50), GLOB.paygrades[ID.paygrade])
 	ID.associated_account_number = acct.account_number
 	ID.uniform_sets = uniform_sets
 	new_human.equip_to_slot_or_del(ID, WEAR_ID)
@@ -405,6 +390,8 @@
 	EquipCustomItems(new_human)
 
 /datum/equipment_preset/proc/load_vanity(mob/living/carbon/human/new_human, client/mob_client)
+	if(new_human)
+		new_human.clear_personal_locker_spawn_context()
 	if(!new_human.client || !new_human.client.prefs || !new_human.client.prefs.gear)
 		return//We want to equip them with custom stuff second, after they are equipped with everything else.
 	for(var/gear_name in new_human.client.prefs.gear)
@@ -1755,6 +1742,14 @@ GLOBAL_LIST_INIT(rebel_ua_pistols, list(
 	new_human.equip_to_slot_or_del(uniform, WEAR_BODY)
 	new_human.equip_to_slot_or_del(new /obj/item/clothing/accessory/patch/royal_marines, WEAR_ACCESSORY)
 
+/datum/equipment_preset/proc/add_rmc_md(mob/living/carbon/human/new_human)
+	if(!istype(new_human))
+		return
+	var/md_chance = rand(1,3)
+	switch(md_chance)
+		if(1)
+			new_human.equip_to_slot_or_del(new /obj/item/device/motiondetector/hacked/twe(new_human), WEAR_IN_BACK)
+
 /datum/equipment_preset/proc/add_canc_uniform(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
@@ -1791,23 +1786,102 @@ GLOBAL_LIST_INIT(rebel_ua_pistols, list(
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 
+/datum/equipment_preset/proc/add_canc_rifle_pouch(mob/living/carbon/human/new_human)
+	if(!istype(new_human))
+		return
+	var/random_canc_rifle_pouch = rand(1,5)
+	switch(random_canc_rifle_pouch)
+		if(1, 2, 3)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/lw317(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/lw317, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/lw317, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/lw317, WEAR_IN_R_STORE)
+		if(4)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/mar40/carbine, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+		if(5)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/mar40, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_R_STORE)
+
+/datum/equipment_preset/proc/add_canc_rifle_upp(mob/living/carbon/human/new_human)
+	if(!istype(new_human))
+		return
+	var/random_canc_rifle_upp = rand(1,5)
+	switch(random_canc_rifle_upp)
+		if(1, 2, 3)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/type71/stripped(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_BELT)
+		if(4)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/bizon, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_BELT)
+		if(5)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/pps43, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_BELT)
+
+/datum/equipment_preset/proc/add_canc_rifle_upp_pouch(mob/living/carbon/human/new_human)
+	if(!istype(new_human))
+		return
+	var/random_canc_rifle_upp_pouch = rand(1,5)
+	switch(random_canc_rifle_upp_pouch)
+		if(1, 2, 3)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/type71/stripped(new_human), WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/type71, WEAR_IN_R_STORE)
+		if(4)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/bizon, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/bizon, WEAR_IN_R_STORE)
+		if(5)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/pps43, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/pouch/magazine, WEAR_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_R_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/pps43, WEAR_IN_R_STORE)
+
 /datum/equipment_preset/proc/add_canc_rifle_newblood(mob/living/carbon/human/new_human)
 	if(!istype(new_human))
 		return
-	var/random_canc_rifle_newblood = rand(1,2)
+	var/random_canc_rifle_newblood = rand(1,11)
 	switch(random_canc_rifle_newblood)
-		if(1)
+		if(1,2,3,4,5)
 			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/mar40, WEAR_J_STORE)
 			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
-		if(2)
+		if(6,7,8,9,10)
 			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/rifle/mar40/carbine, WEAR_J_STORE)
 			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
 			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/mar40, WEAR_IN_BELT)
+		if(11)
+			new_human.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/ppsh, WEAR_J_STORE)
+			new_human.equip_to_slot_or_del(new /obj/item/storage/belt/marine/upp, WEAR_WAIST)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ppsh, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ppsh, WEAR_IN_BELT)
+			new_human.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/ppsh, WEAR_IN_BELT)
 
 /datum/equipment_preset/proc/add_rebel_upp_helmet(mob/living/carbon/human/new_human)
 	if(!istype(new_human))

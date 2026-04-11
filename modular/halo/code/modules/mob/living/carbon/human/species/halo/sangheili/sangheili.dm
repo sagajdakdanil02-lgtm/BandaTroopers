@@ -1,7 +1,9 @@
 /datum/species/sangheili
 	group = SPECIES_SANGHEILI
-	name = "Sangheili"
-	name_plural = "Sangheili"
+	name = SPECIES_SANGHEILI
+	name_plural = SPECIES_SANGHEILI
+	display_name = "Сангхейли"
+	display_name_plural = "Сангхейли"
 	mob_flags = KNOWS_TECHNOLOGY
 	uses_skin_color = TRUE
 	flags = HAS_HARDCRIT|HAS_SKIN_COLOR|SPECIAL_BONEBREAK|NO_SHRAPNEL
@@ -33,9 +35,9 @@
 	heat_level_2 = 700
 	heat_level_3 = 1000
 
-	knock_down_reduction = 1.5
-	stun_reduction = 1.5
-	knock_out_reduction = 1.5
+	knock_down_reduction = 6
+	stun_reduction = 6
+	knock_out_reduction = 6
 
 	icobase = 'icons/halo/mob/humans/species/sangheili/r_sangheili.dmi'
 	deform = 'icons/halo/mob/humans/species/sangheili/r_sangheili.dmi'
@@ -52,6 +54,13 @@
 		"brain" = /datum/internal_organ/brain/sangheili,
 		"eyes" =  /datum/internal_organ/eyes
 		)
+
+/datum/species/sangheili/New()
+	equip_adjust = list(
+		WEAR_R_HAND = list("[NORTH]" = list("x" = 5, "y" = 6), "[EAST]" = list("x" = 0, "y" = 6), "[SOUTH]" = list("x" = -5, "y" = 6), "[WEST]" = list("x" = 2, "y" = 6)),
+		WEAR_L_HAND = list("[NORTH]" = list("x" = -5, "y" = 6), "[EAST]" = list("x" = -2, "y" = 6), "[SOUTH]" = list("x" = 5, "y" = 6), "[WEST]" = list("x" = 0, "y" = 6))
+	)
+	..()
 
 /datum/species/sangheili/post_species_loss(mob/living/carbon/human/H)
 	..()
@@ -106,5 +115,5 @@
 	give_action(sangheili, /datum/action/human_action/activable/covenant/sangheili_kick)
 
 	sangheili.set_languages(list(LANGUAGE_SANGHEILI))
+	sangheili.halo_apply_species_tts_seed()
 	return ..()
-

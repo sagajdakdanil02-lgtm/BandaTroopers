@@ -387,6 +387,7 @@ GLOBAL_LIST_INIT(roundstart_mod_verbs, list(
 		add_verb(src, /client/proc/toggle_rappel_menu)
 		add_verb(src, /client/proc/toggle_fire_support_menu)
 		add_verb(src, /client/proc/gm_lighting)
+		add_verb(src, /client/proc/toggle_droppod_menu) // SS220 EDIT: expose modular HALO droppod GM verb through upstream admin rights gate
 	if(CLIENT_HAS_RIGHTS(src, R_SERVER))
 		add_verb(src, GLOB.admin_verbs_server)
 	if(CLIENT_HAS_RIGHTS(src, R_DEBUG))
@@ -439,6 +440,7 @@ GLOBAL_LIST_INIT(roundstart_mod_verbs, list(
 		/client/proc/toggle_portrait,
 		/client/proc/toggle_intro,
 		/client/proc/gm_lighting,
+		/client/proc/toggle_droppod_menu, // SS220 EDIT: keep modular HALO droppod verb removable with the shared admin hide list
 		GLOB.admin_verbs_admin,
 		GLOB.admin_verbs_ban,
 		GLOB.admin_verbs_minor_event,
@@ -516,7 +518,7 @@ GLOBAL_LIST_INIT(roundstart_mod_verbs, list(
 		else
 			message_admins("[key_name_admin(src)] has warned [warned_ckey] (DC). They have [MAX_WARNS-P.warning_count] strikes remaining.")
 
-/client/proc/give_disease(mob/T as mob in GLOB.mob_list) // -- Giacom
+/client/proc/give_disease(mob/target as mob in GLOB.mob_list) // -- Giacom
 	set category = "Admin.Fun"
 	set name = "Give Disease (old)"
 	set desc = "Gives a (tg-style) Disease to a mob."
@@ -526,10 +528,17 @@ GLOBAL_LIST_INIT(roundstart_mod_verbs, list(
 	var/datum/disease/D = tgui_input_list(usr, "Choose the disease to give to that guy", "ACHOO", disease_names)
 	if(!D) return
 	var/path = text2path("/datum/disease/[D]")
-	T.contract_disease(new path, 1)
+	target.contract_disease(new path, 1)
 
-	message_admins("[key_name_admin(usr)] gave [key_name(T)] the disease [D].")
+	message_admins("[key_name_admin(usr)] gave [key_name(target)] the disease [D].")
 
+/client/proc/remove_all_disease(mob/target as mob in GLOB.mob_list)
+	set category = "Admin.Fun"
+	set name = "Remove All Diseases"
+	set desc = "Removes All Diseases from a mob."
+	QDEL_LIST(target.viruses)
+
+	message_admins("[key_name_admin(usr)] removed all disease from [key_name(target)].")
 
 /client/proc/object_talk(msg as text) // -- TLE
 	set category = "Admin.Events"

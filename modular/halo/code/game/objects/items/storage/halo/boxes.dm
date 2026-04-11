@@ -1,6 +1,6 @@
 /obj/item/storage/box/tear_packet
 	name = "packet"
-	desc = "A plastic packet."
+	desc = "Пластиковый пакет."
 	icon = 'icons/halo/obj/items/storage/packets.dmi'
 	icon_state = "ammo_packet"
 	w_class = SIZE_SMALL
@@ -31,8 +31,9 @@
 
 /obj/item/storage/box/tear_packet/medical_packet
 	name = "UNSC medical packet"
-	desc = "A combat-rated first aid medical packet filled with the bare bones basic essentials to ensuring you or your buddies don't die on the battlefield."
+	desc = "Боевой медицинский пакет первой помощи с самым необходимым минимумом, чтобы вы или ваши товарищи не умерли прямо на поле боя."
 	icon_state = "medical_packet"
+	w_class = 3
 	storage_slots = 6
 	max_w_class = 3
 	can_hold = list(

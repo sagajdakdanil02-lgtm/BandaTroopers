@@ -85,11 +85,6 @@
 /datum/job/marine/medic/ai/get_total_positions(latejoin=0)
 	return latejoin ? total_positions : spawn_positions
 
-/datum/job/marine/medic/ai/odst
-	title = JOB_SQUAD_MEDIC_ODST // SS220 EDIT: HALO ODST medic role
-	gear_preset = /datum/equipment_preset/unsc/medic/odst
-	gear_preset_secondary = /datum/equipment_preset/unsc/medic/odst/lesser_rank
-
 /datum/job/marine/medic/ai/upp
 	title = JOB_SQUAD_MEDIC_UPP
 	gear_preset = /datum/equipment_preset/uscm/medic/upp
@@ -129,6 +124,19 @@
 	squad = SQUAD_UPP
 	job = /datum/job/marine/medic/ai/upp
 
+/datum/job/marine/medic/ai/upp/forecon
+	title = JOB_SQUAD_MEDIC_FORECON_UPP
+	gear_preset = /datum/equipment_preset/uscm/medic/upp/forecon
+	gear_preset_secondary = /datum/equipment_preset/uscm/medic/upp/forecon/junior_sergeant
+	gear_preset_tertiary = /datum/equipment_preset/uscm/medic/upp/forecon/corporal
+	gear_preset_quaternary = /datum/equipment_preset/uscm/medic/upp/forecon/senior_private
+	job_options = list(SR_PVT_VARIANT = "SrPVT", CPL_VARIANT = "CPL", JSGT_VARIANT = "JrSGT", SGT_VARIANT = "SGT")
+
+/obj/effect/landmark/start/marine/medic/upp/forecon
+	name = JOB_SQUAD_MEDIC_FORECON_UPP
+	squad = SQUAD_SISSI
+	job = /datum/job/marine/medic/ai/upp/forecon
+
 
 /datum/job/marine/medic/ai/pmc
 	title = JOB_PMCPLAT_MEDIC
@@ -154,11 +162,6 @@
 	name = JOB_SQUAD_MEDIC_FORECON
 	squad = SQUAD_LRRP
 	job = /datum/job/marine/medic/ai/forecon
-
-/obj/effect/landmark/start/marine/medic/odst
-	name = JOB_SQUAD_MEDIC_ODST // SS220 EDIT: HALO ODST medic spawn
-	squad = SQUAD_ODST
-	job = /datum/job/marine/medic/ai/odst
 
 //-- RMC Platoon --//
 //Medical Assistant//

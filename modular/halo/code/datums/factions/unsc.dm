@@ -1,5 +1,5 @@
 /datum/faction/unsc
-	name = "United Nations Space Command"
+	name = "Космическое командование ООН"
 	faction_tag = FACTION_UNSC
 
 /datum/faction/unsc/modify_hud_holder(image/holder, mob/living/carbon/human/current_human)
@@ -19,6 +19,7 @@
 			if(JOB_SQUAD_TEAM_LEADER) marine_rk = "tl"
 			if(JOB_SQUAD_MEDIC) marine_rk = "med"
 			if(JOB_SQUAD_SMARTGUN) marine_rk = "gun"
+			if(JOB_SO) marine_rk = "wo_co"
 			if(JOB_XO) marine_rk = "xo"
 			if(JOB_CO) marine_rk = "co"
 			if(JOB_GENERAL) marine_rk = "general"
@@ -33,8 +34,7 @@
 			if(JOB_MARINE_RAIDER_CMD) marine_rk = "soccmd"
 			if(JOB_SQUAD_TECH) marine_rk = "tech"
 		if(squad.squad_leader == current_human)
-			switch(squad.squad_type)
-				if("Squad") marine_rk = "leader_a"
+			marine_rk = squad.lead_icon || "leader"
 			current_human.langchat_styles = "langchat_bolded" // bold text for bold leaders
 		else if(squad.fireteam_leaders["SQ1"] == current_human || squad.fireteam_leaders["SQ2"] == current_human)
 			current_human.langchat_styles = "langchat_smaller_bolded"
@@ -80,7 +80,7 @@
 			if(JOB_USCM_OBSV)
 				marine_rk = "vo"
 				border_rk = "command"
-			if(JOB_SO)
+			if(JOB_SO, JOB_SO_UNSC, JOB_SO_ODST)
 				marine_rk = "wo_co"
 				border_rk = "command"
 			if(JOB_AUXILIARY_OFFICER)
@@ -233,9 +233,9 @@
 
 
 /datum/faction/unscn
-	name = "United Nations Space Command Navy"
+	name = "Военно-космический флот ООН"
 	faction_tag = FACTION_UNSCN
 
 /datum/faction/oni
-	name = "Office of Naval Intelligence"
+	name = "Управление военно-морской разведки"
 	faction_tag = FACTION_ONI

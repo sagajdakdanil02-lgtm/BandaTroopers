@@ -1,7 +1,9 @@
 /datum/species/unggoy
 	group = SPECIES_UNGGOY
-	name = "Unggoy"
-	name_plural = "Unggoy"
+	name = SPECIES_UNGGOY
+	name_plural = SPECIES_UNGGOY
+	display_name = "Унггой"
+	display_name_plural = "Унггои"
 	mob_flags = KNOWS_TECHNOLOGY
 	uses_skin_color = TRUE
 	flags = HAS_HARDCRIT|HAS_SKIN_COLOR|SPECIAL_BONEBREAK|NO_SHRAPNEL
@@ -17,7 +19,7 @@
 	blood_color = BLOOD_COLOR_UNGGOY
 	flesh_color = "#317986"
 
-	total_health = 125
+	total_health = 120
 	burn_mod = 1
 	brute_mod = 1
 	slowdown = 0.1
@@ -28,6 +30,10 @@
 	dodge_pool_regen_max = 1
 	dodge_pool_regen_restoration = 0.2
 	dp_regen_base_reactivation_time = 35
+
+	knock_down_reduction = 2.5
+	stun_reduction = 2.5
+	knock_out_reduction = 2.5
 
 	icobase = 'icons/halo/mob/humans/species/unggoy/r_unggoy.dmi'
 	deform = 'icons/halo/mob/humans/species/unggoy/r_unggoy.dmi'
@@ -43,6 +49,13 @@
 		"brain" = /datum/internal_organ/brain/unggoy,
 		"eyes" =  /datum/internal_organ/eyes
 		)
+
+/datum/species/unggoy/New()
+	equip_adjust = list(
+		WEAR_R_HAND = list("[NORTH]" = list("x" = 5, "y" = -5), "[EAST]" = list("x" = 7, "y" = -5), "[SOUTH]" = list("x" = -4, "y" = -5), "[WEST]" = list("x" = 0, "y" = -5)),
+		WEAR_L_HAND = list("[NORTH]" = list("x" = -4, "y" = -5), "[EAST]" = list("x" = 0, "y" = -5), "[SOUTH]" = list("x" = 5, "y" = -5), "[WEST]" = list("x" = -7, "y" = -5))
+	)
+	..()
 
 /datum/species/unggoy/post_species_loss(mob/living/carbon/human/H)
 	..()
@@ -91,5 +104,5 @@
 				limb.max_damage = 150 // 1 minute to self heal bone break, time is in tenths of a second
 
 	unggoy.set_languages(list(LANGUAGE_SANGHEILI, LANGUAGE_UNGGOY))
+	unggoy.halo_apply_species_tts_seed()
 	return ..()
-

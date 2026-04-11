@@ -448,6 +448,10 @@
 	name = "upp late join"
 	squad = SQUAD_UPP
 
+/obj/effect/landmark/late_join/upp/forecon
+	name = "upp forecon late join"
+	squad = SQUAD_SISSI
+
 /obj/effect/landmark/late_join/rmc
 	name = "rmc late join"
 	squad = SQUAD_RMC
@@ -485,10 +489,6 @@
 /obj/effect/landmark/late_join/forecon
 	name = "forecon late join"
 	squad = SQUAD_LRRP
-
-/obj/effect/landmark/late_join/odst
-	name = "ODST late join" // SS220 EDIT: HALO ODST latejoin landmark
-	squad = SQUAD_ODST
 
 /obj/effect/landmark/late_join/pmc
 	name = "pmc late join"

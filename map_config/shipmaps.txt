@@ -27,7 +27,13 @@ endmap
 map chapaev
 endmap
 
+map laituri
+endmap
+
 map rover
+endmap
+
+map rover_tethered
 endmap
 
 map golden_arrow_classic
@@ -46,6 +52,7 @@ map uscm_blue_ridge
 	default
 endmap
 
+# SS220 EDIT - START: HALO ship map rotation
 map unsc_dark_was_the_night
 endmap
 
